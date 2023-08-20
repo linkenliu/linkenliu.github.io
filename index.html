@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>我爱你</title>
+    <title>娜娜小朋友，七夕🎋快乐</title>
     <meta name="language" content="zh-CN">
     <meta name="github" content="https://github.com/sun0225SUN/Awesome-Love-Code">
     <meta name="describe" content="收集不易，您的star是我坚持的动力，同时也欢迎各位PR哦! ">
@@ -22,7 +22,15 @@
 </head>
 
 <body>
-<audio id="music" src="https://fmq.mumingma.com/res/2019/03/26/4048948304.mp3" loop autoplay></audio>
+<div></div>
+<div id="start" style="text-align: center;top: 50%;clear: bottom">
+    <button  style="    background-color: #f78ca0;color: aliceblue;
+    width: 100%;
+    height: 100%;
+    font-size: 100px;
+    box-shadow: 1px 1px 5px gray;">Start</button>
+</div>
+<audio id="music" src="http://cdnringbd.shoujiduoduo.com/ringres/userv1/a48/343/97171343.aac" loop autoplay></audio>
 <canvas id="canvas" style="position:absolute;width:100%;height:100%;z-index:8888"></canvas>
 <canvas style="position:absolute;width:100%;height:100%;z-index:9999" class="canvas"></canvas>
 <div class="overlay">
@@ -37,9 +45,26 @@
     </div>
 </div>
 <script>
-    var music = document.getElementById("music");
-    music.play();
+    document.getElementById('start').onclick= function () {
+        var music = document.getElementById("music");
+        music.play();
 
+        var oHead = document.getElementsByTagName('HEAD').item(0);
+
+        var oScript= document.createElement("script");
+
+        oScript.type = "text/javascript";
+
+        oScript.src="js/index.js";
+
+        oHead.appendChild( oScript);
+
+
+        document.getElementById('start').style.display = 'none'
+
+
+
+    };
     function initVars() {
 
         pi = Math.PI;
@@ -365,6 +390,7 @@
         doLogic();
         requestAnimationFrame(frame);
     }
+/*
 
     window.addEventListener("resize", () => {
         canvas.width = canvas.clientWidth;
@@ -372,11 +398,12 @@
         cx = canvas.width / 2;
         cy = canvas.height / 2;
     });
+*/
 
-    initVars();
-    frame();
+    //initVars();
+    //frame();
 </script>
-<script src="js/index.js"></script>
+<!--<script src="js/index.js"></script>-->
 
 </body>
 
